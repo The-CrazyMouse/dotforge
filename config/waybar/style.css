@@ -1,0 +1,118 @@
+/* ╭──────────────────────────────────────────────────────────╮
+   │                  Everforest Waybar Style                 │
+   ╰──────────────────────────────────────────────────────────╯ */
+
+/* Everforest Dark Colors */
+@define-color bg       #2d353b;
+@define-color bg_alt   #343f44;
+@define-color fg       #d3c6aa;
+@define-color green    #a7c080;
+@define-color yellow   #dbbc7f;
+@define-color orange   #e69875;
+@define-color red      #e67e80;
+
+/* Global */
+* {
+    font-family: Iosevka Nerd Font, JetBrainsMono Nerd Font, monospace;
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+window#waybar {
+    background: @bg;
+    color: @fg;
+    padding: 4px 0px;
+}
+
+/* Logo */
+#custom-logo {
+    padding: 0 12px;
+    color: @green;
+    font-size: 18px;
+}
+
+/* ┌──────────────────────────────────────────────────────────┐
+   │                     Workspaces                           │
+   └──────────────────────────────────────────────────────────┘ */
+
+#workspaces {
+    margin-left: 8px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    margin: 0 2px;
+    background: transparent;
+    color: @fg;
+    border: none;
+    border-radius: 0;                 /* ← REMOVE rounded corners */
+    border-bottom: 2px solid transparent; /* straight line */
+    min-width: 18px;
+    transition: all 0.15s ease;
+}
+
+/* ACTIVE */
+#workspaces button.active {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;   /* ← straight line */
+    font-weight: bold;
+}
+
+/* HOVER */
+#workspaces button:hover {
+    color: @green;
+    border-bottom: 2px solid @green;    /* ← straight line */
+}
+
+/* URGENT */
+#workspaces button.urgent {
+    color: @red;
+    border-bottom: 2px solid @red;      /* ← straight line */
+}
+
+/* ┌──────────────────────────────────────────────────────────┐
+   │                         Center                           │
+   └──────────────────────────────────────────────────────────┘ */
+#clock {
+    padding: 0 16px;
+    color: @yellow;
+    font-weight: bold;
+}
+
+/* ┌──────────────────────────────────────────────────────────┐
+   │                    Right-side modules                    │
+   └──────────────────────────────────────────────────────────┘ */
+#tray,
+#pulseaudio,
+#cpu,
+#battery {
+    padding: 0 12px;
+    background: @bg_alt;
+    margin-left: 6px;
+    color: @fg;
+}
+
+#pulseaudio.muted {
+    color: @orange;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @orange;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        background: @red;
+        color: @bg;
+    }
+}
+

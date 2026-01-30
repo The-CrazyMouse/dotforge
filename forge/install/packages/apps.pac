@@ -1,4 +1,3 @@
-nautilus
 telegram-desktop
 gnome-disk-utility
 mpv
@@ -7,13 +6,10 @@ onefetch
 eza
 mako
 waybar
-swaybg
 swayosd
 hyprland
 hypridle
 hyprlock
-hyprpicker
-hyprsunset
 uwsm
 webp-pixbuf-loader
 

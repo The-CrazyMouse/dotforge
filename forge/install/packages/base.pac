@@ -1,7 +1,8 @@
 bash-completion
+shellcheck
+impala
 luarocks
 wiremix
-hyprpaper
 bat
 brightnessctl
 btop

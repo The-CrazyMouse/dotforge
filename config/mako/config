@@ -1,0 +1,94 @@
+######################################
+# GLOBAL
+######################################
+
+font=JetBrainsMono Nerd Font 10
+
+max-visible=5
+max-history=100
+
+width=380
+height=120
+margin=10
+padding=15
+border-size=2
+border-radius=10
+
+anchor=top-right
+
+default-timeout=6000
+ignore-timeout=false
+
+icons=1
+icon-path=/usr/share/icons/hicolor:/usr/share/pixmaps
+
+######################################
+# CORES — EVERFOREST
+######################################
+
+background-color=#2b3339ee
+text-color=#d3c6aaff
+border-color=#a7c080ff
+
+progress-color=over #d699b6ff
+
+######################################
+# URGÊNCIAS
+######################################
+
+[urgency=low]
+border-color=#859289ff
+default-timeout=3000
+
+[urgency=normal]
+border-color=#a7c080ff
+default-timeout=6000
+
+[urgency=critical]
+border-color=#e67e80ff
+background-color=#2b3339ff
+text-color=#e67e80ff
+default-timeout=0
+
+######################################
+# INTERAÇÃO
+######################################
+
+# Esquerdo: fechar
+on-button-left=dismiss
+
+# Direito: abrir aplicação
+on-button-right=invoke-default-action
+
+######################################
+# GRUPOS POR APP
+######################################
+
+[app-name=Spotify]
+border-color=#a7c080ff
+
+[app-name=Discord]
+border-color=#7fbbb3ff
+
+[app-name=Firefox]
+border-color=#dbbc7fff
+
+[app-name=Alacritty]
+border-color=#d699b6ff
+
+######################################
+# SUPRESSÕES
+######################################
+
+[summary~="Volume"]
+invisible=1
+
+[summary~="Brightness"]
+invisible=1
+
+######################################
+# AÇÕES
+######################################
+
+actions=1
+

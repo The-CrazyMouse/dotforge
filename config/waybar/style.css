@@ -13,7 +13,7 @@
 
 /* Global */
 * {
-    font-family: Iosevka Nerd Font, JetBrainsMono Nerd Font, monospace;
+    font-family: Iosevka Nerd Font, JetBrainsMono Nerd Font, Hack Nerd Font, monospace;
     font-size: 13px;
     border-radius: 6px;
 }
@@ -60,7 +60,7 @@ window#waybar {
 
 /* HOVER */
 #workspaces button:hover {
-    color: @green;
+    color: @yellow;
     border-bottom: 2px solid @green;    /* ← straight line */
 }
 
@@ -83,6 +83,7 @@ window#waybar {
    │                    Right-side modules                    │
    └──────────────────────────────────────────────────────────┘ */
 #tray,
+#network,
 #pulseaudio,
 #cpu,
 #battery {

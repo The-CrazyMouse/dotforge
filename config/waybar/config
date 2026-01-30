@@ -1,62 +1,89 @@
 {
-  "layer": "top",
-  "position": "top",
-  "height": 30,
+	"layer": "top",
+		"position": "top",
+		"height": 30,
 
-  "modules-left": [
-    "custom/logo",
-    "hyprland/workspaces"
-  ],
+		"modules-left": [
+			"custom/logo",
+		"hyprland/workspaces"
+		],
 
-  "modules-center": [
-    "clock"
-  ],
+		"modules-center": [
+			"clock"
+		],
 
-  "modules-right": [
-    "tray",
-    "pulseaudio",
-    "cpu",
-    "battery"
-  ],
+		"modules-right": [
+			"tray",
+		"network",
+		"pulseaudio",
+		"cpu",
+		"battery"
+		],
 
-  "custom/logo": {
-    "format": "",
-    "tooltip": false
-  },
+		"custom/logo": {
+			"format": "",
+			"tooltip": false
+		},
 
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "tooltip": false,
-    "on-click": "activate"
-  },
+		"hyprland/workspaces": {
+			"format": "{name}",
+			"tooltip": false,
+			"on-click": "activate"
+		},
 
-  "clock": {
-    "format": "{:%Y-%m-%d  %H:%M}",
-    "tooltip": false
-  },
+		"clock": {
+			"format": "{:%Y-%m-%d  %H:%M}",
+			"tooltip": false
+		},
 
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10,
-  },
+		"tray": {
+			"icon-size": 18,
+			"spacing": 10
+		},
 
-  "pulseaudio": {
-    "format": "{volume}% ",
-    "format-muted": "Muted ",
-    "tooltip": false,
-    "on-click": "ghostty -e wiremix --tab output"
-  },
+		"network": {
+			"format-wifi": "{signalStrength}% ",
+			"format-ethernet": "",
+			"format-disconnected": "Disconnected ",
+			"tooltip": false,
+			"on-click": "ghostty -e impala"
+		},
 
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false,
-    "on-click": "ghostty -e btop"
-  },
+		"pulseaudio": {
+			"format": "{volume}% {icon}",
+			"format-muted": "Muted  ",
 
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip": false
-  }
+			"format-bluetooth": " -> {volume}% {icon}",
+			"format-bluetooth-muted": " -> Muted  ",
+
+			"tooltip": false,
+			"on-click": "ghostty -e wiremix --tab output",
+
+			"format-icons": {
+				"headphone": " ",
+				"headset": "",
+				"analog-output-headphones": "🎧",
+				"analog-output-speaker": "🔊",
+				"default": ["", "", ""]
+			},
+		},
+
+		"cpu": {
+			"format": "{usage}% ",
+			"tooltip": false,
+			"on-click": "ghostty -e btop"
+		},
+
+		"battery": {
+			"format": "{capacity}% {icon}",
+			"format-icons": ["", "", "", "", ""],
+			"tooltip": false,
+			"on-click": "~/.local/bin/battery-menu",
+
+			"states": {
+				"warning": 25,
+				"critical": 10
+			}
+		}
 }
 

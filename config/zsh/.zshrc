@@ -116,8 +116,20 @@ autoload -Uz compinit; compinit
 bindkey -s ^f "tmux-sessionizer\n"
 
 
+
 export MISE_DISABLE_TOOLS="@system"
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 eval "$(mise activate zsh)"
 
-. "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$HOME/.nimble/bin:$PATH"
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/mouse/.opam/opam-init/init.zsh' ]] || source '/home/mouse/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration

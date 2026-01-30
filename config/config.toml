@@ -1,4 +1,0 @@
-[settings]
-default_path = "$HOME/.local/bin"
-disable_tools = ["@system"]
-

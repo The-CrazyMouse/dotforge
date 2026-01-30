@@ -1,0 +1,27 @@
+#!/bin/bash
+
+menu() {
+    echo -e "$1" | rofi -dmenu \
+        -width 20 \
+        -lines 5 \
+        -p "Power…" \
+        -no-fixed-num-lines \
+        -padding 10 \
+        -theme-str 'window { width: 280px; } listview { lines: 5; }' \
+        2>/dev/null
+}
+
+choice=$(menu "󰐥  Shutdown
+󰜉  Restart
+󰤄  Suspend
+󰗽  Logout
+  Lock")
+
+case "$choice" in
+    *Shutdown*) systemctl poweroff ;;
+    *Restart*)  systemctl reboot ;;
+    *Suspend*)  systemctl suspend ;;
+    *Logout*)   hyprctl dispatch exit ;;
+    *Lock*)     loginctl lock-session ;;
+esac
+

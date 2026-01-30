@@ -1,0 +1,37 @@
+#!/bin/bash
+
+menu() {
+    echo -e "$1" | rofi -dmenu \
+        -p "Power Profile…" \
+        -no-fixed-num-lines \
+        -theme-str '
+            window { width: 280px; }
+            listview { lines: 3; fixed-height: false; }' \
+        2>/dev/null
+}
+
+# Get current profile
+CURR=$(powerprofilesctl get 2>/dev/null)
+
+# Build menu
+MENU=""
+while read -r profile; do
+    if [[ "$profile" == "$CURR" ]]; then
+        MENU+="  $profile\n"
+    else
+        MENU+="  $profile\n"
+    fi
+done <<< "$(powerprofilesctl list | awk '/^\s*[* ]\s*[a-zA-Z0-9\-]+:$/ {
+    gsub(/^[*[:space:]]+|:$/,"");
+    print
+}')"
+
+# Show rofi menu
+choice=$(menu "$MENU")
+
+# Extract profile name (strip icon)
+profile_name=$(echo "$choice" | awk '{print $2}')
+
+# Apply profile
+[ -n "$profile_name" ] && powerprofilesctl set "$profile_name"
+

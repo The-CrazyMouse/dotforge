@@ -1,7 +1,13 @@
 base
 base-devel
-git
-wget
-curl
-zram-generator
 dkms
+gst-plugin-pipewire
+iwd
+libpulse
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+wireplumber
+wireless-regdb
+zram-generator

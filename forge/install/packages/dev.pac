@@ -1,3 +1,10 @@
 clang
+curl
+git
+luarocks
 mise
+neovim
+shellcheck
 tmux
+tree-sitter-cli
+wget

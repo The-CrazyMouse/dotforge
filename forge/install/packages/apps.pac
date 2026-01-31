@@ -1,15 +1,4 @@
-telegram-desktop
 gnome-disk-utility
+imv
 mpv
-fastfetch
-onefetch
-eza
-mako
-waybar
-swayosd
-hyprland
-hypridle
-hyprlock
-uwsm
-webp-pixbuf-loader
-
+telegram-desktop

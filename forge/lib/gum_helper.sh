@@ -12,7 +12,7 @@ get_color() {
     esac
 }
 
-print() {
+out() {
     local msg="$1"
     local col="$2"
 

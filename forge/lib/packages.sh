@@ -8,13 +8,8 @@ is_installed() {
         return 0
     fi
 
-    # yay package
+    # yay package (AUR)
     if command -v yay &>/dev/null && yay -Q "$pkg" &>/dev/null; then
-        return 0
-    fi
-
-    # mise-managed tool (e.g. programming tools)
-    if command -v mise &>/dev/null && mise which "$pkg" &>/dev/null; then
         return 0
     fi
 

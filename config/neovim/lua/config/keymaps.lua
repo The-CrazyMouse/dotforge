@@ -16,14 +16,14 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Past without overwriting
- vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Copies to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) 
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Deletes stuff to the void (doesn't overwriting register or clipboard)
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Disables Ex mode
 vim.keymap.set("n", "Q", "<nop>")
@@ -41,4 +41,8 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Open neovim config
+vim.keymap.set("n", "<leader>nc", "<cmd>e ~/.dotforge/config/neovim/init.lua<CR>", { desc = "Open Neovim Configuration" })
 
+-- Make File Executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make Current File Executable" })

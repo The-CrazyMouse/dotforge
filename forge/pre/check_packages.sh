@@ -1,36 +1,33 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 set -euo pipefail
 
 source "$DOT_HOME/forge/lib/lib.sh"
 
 DIR="$DOT_HOME/forge/install/packages"
 
-print "Checking Packages" green
+out "Checking packages availability" green
+
+shopt -s nullglob
 
 for FILE in "$DIR"/*; do
-  EXT="${FILE##*.}"
+    EXT="${FILE##*.}"
 
-  case "$EXT" in
-    pac)
-      CMD="pacman -Si"
-      ;;
-    aur)
-      CMD="yay -Si"
-      ;;
-    mise)
-      CMD="mise tool"
-      ;;
-    *)
-      continue
-      ;;
-  esac
+    while IFS= read -r pkg; do
+        [[ -z "$pkg" ]] && continue
 
-  while IFS= read -r pkg; do
-    [ -z "$pkg" ] && continue
-
-    if ! $CMD "$pkg" >/dev/null 2>&1; then
-      print "Not Found: $pkg - $FILE" red
-    fi
-  done < "$FILE"
+        case "$EXT" in
+            pac)
+                if ! pacman -Si "$pkg" &>/dev/null; then
+                    out "Not found (pacman): $pkg → $FILE" red
+                fi
+                ;;
+            aur)
+                if ! yay -Si "$pkg" &>/dev/null; then
+                    out "Not found (AUR): $pkg → $FILE" red
+                fi
+                ;;
+        esac
+    done < "$FILE"
 done
 

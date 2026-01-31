@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -6,15 +6,15 @@ set -euo pipefail
 source "$DOT_HOME/forge/lib/lib.sh"
 
 if is_installed "yay"; then
-    print "Yay already installed" green
+    out "Yay already installed" green
     exit 0
 fi
 
-print "Installing dependencies" blue
+out "Installing dependencies" blue
 sudo pacman -S --needed git base-devel --noconfirm
 
 echo ""
-print "Cloning yay repo" blue
+out "Cloning yay repo" blue
 
 tmp_dir="/tmp/yay"
 
@@ -26,11 +26,11 @@ git clone https://aur.archlinux.org/yay.git "$tmp_dir"
 cd "$tmp_dir"
 
 echo ""
-print "Installing yay" blue
+out "Installing yay" blue
 makepkg -si --noconfirm
 
 cd /
 
-print "Clean up" blue
+out "Clean up" blue
 rm -rf "$tmp_dir"
 

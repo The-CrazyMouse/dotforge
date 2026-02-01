@@ -6,6 +6,9 @@ if [[ -z "${DOT_HOME:-}" ]]; then
 	export DOT_HOME="$HOME/.dotforge"
 fi
 
+source "$DOT_HOME/forge/lib/lib.sh"
+
+
 out "Installing base dependencies (gum, git, mise)..." blue
 sudo pacman -S --needed --noconfirm gum git mise
 

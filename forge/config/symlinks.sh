@@ -43,23 +43,23 @@ ln -svf "$DOTS/ghostty/config"          "$HOME/.config/ghostty/config"
 # ──────────────────────────────────────────────────────────────────────────────
 # Hyprland – main config files + scripts/
 # ──────────────────────────────────────────────────────────────────────────────
-ln -svf "$DOTS/hypr/binds.conf"         "$HOME/.config/hypr/binds.conf"
-ln -svf "$DOTS/hypr/env-var.conf"       "$HOME/.config/hypr/env-var.conf"
-ln -svf "$DOTS/hypr/hyprland.conf"      "$HOME/.config/hypr/hyprland.conf"
-ln -svf "$DOTS/hypr/input.conf"         "$HOME/.config/hypr/input.conf"
-ln -svf "$DOTS/hypr/looknfeel.conf"     "$HOME/.config/hypr/looknfeel.conf"
-ln -svf "$DOTS/hypr/monitors.conf"      "$HOME/.config/hypr/monitors.conf"
-ln -svf "$DOTS/hypr/startup.conf"       "$HOME/.config/hypr/startup.conf"
+sudo ln -svf "$DOTS/hypr/binds.conf"         "$HOME/.config/hypr/binds.conf"
+sudo ln -svf "$DOTS/hypr/env-var.conf"       "$HOME/.config/hypr/env-var.conf"
+sudo ln -svf "$DOTS/hypr/hyprland.conf"      "$HOME/.config/hypr/hyprland.conf"
+sudo ln -svf "$DOTS/hypr/input.conf"         "$HOME/.config/hypr/input.conf"
+sudo ln -svf "$DOTS/hypr/looknfeel.conf"     "$HOME/.config/hypr/looknfeel.conf"
+sudo ln -svf "$DOTS/hypr/monitors.conf"      "$HOME/.config/hypr/monitors.conf"
+sudo ln -svf "$DOTS/hypr/startup.conf"       "$HOME/.config/hypr/startup.conf"
 
 # scripts subdir (create parent if missing – harmless if already exists)
 mkdir -p "$HOME/.config/hypr/scripts"
-ln -svf "$DOTS/hypr/scripts/float.sh"   "$HOME/.config/hypr/scripts/float.sh"
-ln -svf "$DOTS/hypr/scripts/move.sh"    "$HOME/.config/hypr/scripts/move.sh"
+sudo ln -svf "$DOTS/hypr/scripts/float.sh"   "$HOME/.config/hypr/scripts/float.sh"
+sudo ln -svf "$DOTS/hypr/scripts/move.sh"    "$HOME/.config/hypr/scripts/move.sh"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Mako
 # ──────────────────────────────────────────────────────────────────────────────
-ln -svf "$DOTS/mako/config"             "$HOME/.config/mako/config"
+sudo ln -svf "$DOTS/mako/config"             "$HOME/.config/mako/config"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Neovim (individual files – you could symlink whole lua/ later)
@@ -67,31 +67,31 @@ ln -svf "$DOTS/mako/config"             "$HOME/.config/mako/config"
 ln -svf "$DOTS/neovim/init.lua"         "$HOME/.config/nvim/init.lua"
 
 mkdir -p "$HOME/.config/nvim/lua/config"
-ln -svf "$DOTS/neovim/lua/config/autocmds.lua"  "$HOME/.config/nvim/lua/config/autocmds.lua"
-ln -svf "$DOTS/neovim/lua/config/keymaps.lua"   "$HOME/.config/nvim/lua/config/keymaps.lua"
-ln -svf "$DOTS/neovim/lua/config/options.lua"   "$HOME/.config/nvim/lua/config/options.lua"
+sudo ln -svf "$DOTS/neovim/lua/config/autocmds.lua"  "$HOME/.config/nvim/lua/config/autocmds.lua"
+sudo ln -svf "$DOTS/neovim/lua/config/keymaps.lua"   "$HOME/.config/nvim/lua/config/keymaps.lua"
+sudo ln -svf "$DOTS/neovim/lua/config/options.lua"   "$HOME/.config/nvim/lua/config/options.lua"
 
 mkdir -p "$HOME/.config/nvim/lua/plugins"
-ln -svf "$DOTS/neovim/lua/plugins/alpha.lua"     "$HOME/.config/nvim/lua/plugins/alpha.lua"
-ln -svf "$DOTS/neovim/lua/plugins/cmp.lua"       "$HOME/.config/nvim/lua/plugins/cmp.lua"
-ln -svf "$DOTS/neovim/lua/plugins/color.lua"     "$HOME/.config/nvim/lua/plugins/color.lua"
-ln -svf "$DOTS/neovim/lua/plugins/fugitive.lua"  "$HOME/.config/nvim/lua/plugins/fugitive.lua"
-ln -svf "$DOTS/neovim/lua/plugins/gitsigns.lua"  "$HOME/.config/nvim/lua/plugins/gitsigns.lua"
-ln -svf "$DOTS/neovim/lua/plugins/harpoon.lua"   "$HOME/.config/nvim/lua/plugins/harpoon.lua"
-ln -svf "$DOTS/neovim/lua/plugins/lsp.lua"       "$HOME/.config/nvim/lua/plugins/lsp.lua"
-ln -svf "$DOTS/neovim/lua/plugins/lualine.lua"   "$HOME/.config/nvim/lua/plugins/lualine.lua"
-ln -svf "$DOTS/neovim/lua/plugins/pairs.lua"     "$HOME/.config/nvim/lua/plugins/pairs.lua"
-ln -svf "$DOTS/neovim/lua/plugins/telescope.lua" "$HOME/.config/nvim/lua/plugins/telescope.lua"
-ln -svf "$DOTS/neovim/lua/plugins/tmux.lua"      "$HOME/.config/nvim/lua/plugins/tmux.lua"
-ln -svf "$DOTS/neovim/lua/plugins/todo.lua"      "$HOME/.config/nvim/lua/plugins/todo.lua"
-ln -svf "$DOTS/neovim/lua/plugins/treesitter.lua""$HOME/.config/nvim/lua/plugins/treesitter.lua"
-ln -svf "$DOTS/neovim/lua/plugins/undotree.lua"  "$HOME/.config/nvim/lua/plugins/undotree.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/alpha.lua"     "$HOME/.config/nvim/lua/plugins/alpha.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/cmp.lua"       "$HOME/.config/nvim/lua/plugins/cmp.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/color.lua"     "$HOME/.config/nvim/lua/plugins/color.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/fugitive.lua"  "$HOME/.config/nvim/lua/plugins/fugitive.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/gitsigns.lua"  "$HOME/.config/nvim/lua/plugins/gitsigns.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/harpoon.lua"   "$HOME/.config/nvim/lua/plugins/harpoon.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/lsp.lua"       "$HOME/.config/nvim/lua/plugins/lsp.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/lualine.lua"   "$HOME/.config/nvim/lua/plugins/lualine.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/pairs.lua"     "$HOME/.config/nvim/lua/plugins/pairs.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/telescope.lua" "$HOME/.config/nvim/lua/plugins/telescope.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/tmux.lua"      "$HOME/.config/nvim/lua/plugins/tmux.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/todo.lua"      "$HOME/.config/nvim/lua/plugins/todo.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/treesitter.lua""$HOME/.config/nvim/lua/plugins/treesitter.lua"
+sudo ln -svf "$DOTS/neovim/lua/plugins/undotree.lua"  "$HOME/.config/nvim/lua/plugins/undotree.lua"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Rofi (config + prepare for colors/ later)
 # ──────────────────────────────────────────────────────────────────────────────
 mkdir -p "$HOME/.config/rofi"
-ln -svf "$DOTS/rofi/config.rasi"        "$HOME/.config/rofi/config.rasi"
+sudo ln -svf "$DOTS/rofi/config.rasi"        "$HOME/.config/rofi/config.rasi"
 
 # Uncomment & add as you create themes:
 # mkdir -p "$HOME/.config/rofi/colors"
@@ -101,15 +101,15 @@ ln -svf "$DOTS/rofi/config.rasi"        "$HOME/.config/rofi/config.rasi"
 # ──────────────────────────────────────────────────────────────────────────────
 # Waybar
 # ──────────────────────────────────────────────────────────────────────────────
-ln -svf "$DOTS/waybar/config"           "$HOME/.config/waybar/config"
-ln -svf "$DOTS/waybar/style.css"        "$HOME/.config/waybar/style.css"
+sudo ln -svf "$DOTS/waybar/config"           "$HOME/.config/waybar/config"
+sudo ln -svf "$DOTS/waybar/style.css"        "$HOME/.config/waybar/style.css"
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Zsh (assuming ~/.config/zsh/ structure)
-# ──────────────────────────────────────────────────────────────────────────────
-mkdir -p "$HOME/.config/zsh"
-ln -svf "$DOTS/zsh/.zshenv"             "$HOME/.config/zsh/.zshenv"
-ln -svf "$DOTS/zsh/.zshrc"              "$HOME/.config/zsh/.zshrc"
+# Zsh (assuming ~/.config/zsh/ 4structure),
+# ──────────────────────────────────────────────────────────────────────────────,
+mkdir -p "$HO4ME/.config/zsh"
+sudo -1n -svf "$DOTS/zsh/.zshenv"             "$HOME/.config/zsh/.zshenv"
+sudo -1n -svf "$DOTS/zsh/.zshrc"              "$HOME/.config/zsh/.zshrc"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # System-level files (requires sudo)

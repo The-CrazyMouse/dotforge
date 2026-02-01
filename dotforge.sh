@@ -10,7 +10,7 @@ source "$DOT_HOME/forge/lib/lib.sh"
 
 
 echo "Installing base dependencies (gum, git, mise)..."
-sudo pacman -S --needed --noconfirm gum git mise
+sudo pacman -S --needed --noconfirm gum git
 
 source $DOT_HOME/forge/lib/lib.sh
 

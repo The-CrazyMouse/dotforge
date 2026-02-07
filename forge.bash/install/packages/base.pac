@@ -20,3 +20,5 @@ xdg-desktop-portal-hyprland
 gdm
 polkit-gnome
 gnome-keyring
+ghostty
+rofi

@@ -2,10 +2,10 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.2.1", -- ← update to latest stable
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "make",
@@ -21,15 +21,21 @@ return {
 			telescope.setup({
 				defaults = {
 					-- Common sensible defaults (feel free to tweak)
-					layout_strategy   = "horizontal",
-					layout_config     = { height = 0.95, width = 0.90, preview_width = 0.55 },
-					sorting_strategy  = "ascending", -- or "descending"
-					prompt_prefix     = "   ",
-					selection_caret   = "󰅂 ",
-					entry_prefix      = "  ",
-					border            = true,
-					borderchars       = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, -- thin rounded like your cmp
-					mappings          = {
+					layout_strategy = "horizontal",
+					layout_config = {
+						horizontal = { height = 0.95, width = 0.90, preview_width = 0.55 },
+						vertical = { height = 0.95, width = 0.90, preview_width = 0.55 },
+						center = { height = 0.9, width = 0.6 },
+						cursor = { height = 0.9, width = 0.6 },
+						bottom_pane = { height = 0.3, prompt_position = "top" },
+					},
+					sorting_strategy = "ascending", -- or "descending"
+					prompt_prefix = "   ",
+					selection_caret = "󰅂 ",
+					entry_prefix = "  ",
+					border = true,
+					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, -- thin rounded like your cmp
+					mappings = {
 						i = {
 							["<C-j>"] = "move_selection_next",
 							["<C-k>"] = "move_selection_previous",
@@ -55,16 +61,16 @@ return {
 						require("telescope.themes").get_dropdown({
 							-- Make it match your Everforest / cmp style
 							borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-							winblend    = 0,
-							previewer   = false,
-							prompt      = " ",
+							winblend = 0,
+							previewer = false,
+							prompt = " ",
 						}),
 					},
 					fzf = {
-						fuzzy                   = true,
+						fuzzy = true,
 						override_generic_sorter = true,
-						override_file_sorter    = true,
-						case_mode               = "smart_case",
+						override_file_sorter = true,
+						case_mode = "smart_case",
 					},
 				},
 			})

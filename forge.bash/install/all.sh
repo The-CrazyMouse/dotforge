@@ -2,11 +2,11 @@
 
 set -euo pipefail
 
-source "$DOT_HOME/forge/lib/lib.sh"
+source "$DOT_HOME/forge.bash/lib/lib.sh"
 
 out "Phase: Install" blue
 echo " "
 
-"$DOT_HOME/forge/install/packages.sh"
-"$DOT_HOME/forge/install/grub.sh"
-"$DOT_HOME/forge/install/zsh.sh"
+"$DOT_HOME/forge.bash/install/packages.sh"
+"$DOT_HOME/forge.bash/install/grub.sh"
+"$DOT_HOME/forge.bash/install/zsh.sh"

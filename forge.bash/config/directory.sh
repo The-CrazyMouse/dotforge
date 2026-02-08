@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-source "$DOT_HOME/forge/lib/lib.sh"
+source "$DOT_HOME/forge.bash/lib/lib.sh"
 
 out "→ Creating user config directories..." blue
 

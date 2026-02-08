@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOT_HOME/forge/lib/lib.sh"
+source "$DOT_HOME/forge.bash/lib/lib.sh"
 
 out "Checking internet connectivity..." blue
 

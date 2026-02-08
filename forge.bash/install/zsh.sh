@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOT_HOME/forge/lib/lib.sh"
+source "$DOT_HOME/forge.bash/lib/lib.sh"
 
 # Install Oh My Zsh (interactive is fine since you can exit)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

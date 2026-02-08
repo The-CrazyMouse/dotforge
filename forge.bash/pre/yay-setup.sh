@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Source libraries via symlink
-source "$DOT_HOME/forge/lib/lib.sh"
+source "$DOT_HOME/forge.bash/lib/lib.sh"
 
 if is_installed "yay"; then
     out "Yay already installed" green

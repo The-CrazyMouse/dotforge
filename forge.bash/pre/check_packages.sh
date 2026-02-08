@@ -2,9 +2,9 @@
 
 set -euo pipefail
 
-source "$DOT_HOME/forge/lib/lib.sh"
+source "$DOT_HOME/forge.bash/lib/lib.sh"
 
-DIR="$DOT_HOME/forge/install/packages"
+DIR="$DOT_HOME/forge.bash/install/packages"
 
 out "Checking packages availability" green
 
